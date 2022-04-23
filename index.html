@@ -33,19 +33,20 @@
                 <div class="content">
                     <div class="text">
                         <h1>1. Abstract</h1>
-                        <p><font size=3>Abstract—Modeling user sequential behaviors has recently attracted increasing attention in the recommendation domain. Existing methods mostly assume coherent preference in the same sequence. However, user personalities are volatile and easily changed, and there can be multiple mixed preferences underlying user behaviors. To solve this problem, in this paper, we propose a novel sequential recommender model via decomposing and modeling user independent preferences. To achieve this goal, we highlight three practical challenges considering the inconsistent, evolving and uneven nature of the user behavior, which are seldom noticed by the previous work. For overcoming these challenges in a unified framework, we introduce a reinforcement learning module to simulate the evolution of user preference. More specifically, the action aims to allocate each item into a sub-sequence or create a new one according to how the previous items are decomposed as well as the time interval between successive behaviors. The reward is associated with the final loss of the learning objective, aiming to generate sub-sequences which can better fit the training data. We conduct extensive experiments based on six real-world datasets across different domains. Comparing with the state-of- the-art methods, empirical studies manifest that our model can on average improve the performance by about 9.68%, 12.4%, 8.56% and 7.13% on the metrics of Precision, Recall, NDCG and MRR, respectively. For reproducing our experiments and promoting this research direction, we have released our project at https://icde-gogo.github.io/submit2022.github.io</font></p>
+                        <p><font size=3>Abstract—Modeling user sequential behaviors has recently attracted increasing attention in the recommendation domain. Existing methods mostly assume coherent preference in the same sequence. However, user personalities are volatile and easily changed, and there can be multiple mixed preferences underlying user behaviors. To solve this problem, in this paper, we propose a novel sequential recommender model via decomposing and modeling user independent preferences. To achieve this goal, we highlight three practical challenges considering the inconsistent, evolving and uneven nature of the user behavior, which are seldom noticed by the previous work. For overcoming these challenges in a unified framework, we introduce a reinforcement learning module to simulate the evolution of user preference. More specifically, the action aims to allocate each item into a sub-sequence or create a new one according to how the previous items are decomposed as well as the time interval between successive behaviors. The reward is associated with the final loss of the learning objective, aiming to generate sub-sequences which can better fit the training data. We conduct extensive experiments based on six real-world datasets across different domains. Comparing with the state-of- the-art methods, empirical studies manifest that our model can on average improve the performance by about 9.68%, 12.4%, 8.56% and 7.13% on the metrics of Precision, Recall, NDCG and MRR, respectively. 
+				</font></p>
                     </div>
                 </div>
 
                 <div class="content">
                     <div class="text">
-                        <h1>2. Illustration of the exposure bias in sequential recommendation. </h1>
+                        <h1>2. Illustration of user inconsistent, evolving and uneven multi-thread preferences. </h1>
                         <div class="content project_headline">
                         <div class="img" style="text-align:center">
                             <img class="img_responsive" src="intro.png" alt="Intro" style="margin:auto;max-width:80%">
                         </div>
                         <div class="text">
-                            <p><font size=3>Figure 1:Examples of user inconsistent, evolving and uneven multi-thread preferences. The inconsistent nature is reflected by the comparison between the top and middle blocks, which suggests that different users may have different numbers of preference threads. The evolving character is illustrated in the middle block, where item B6 belongs to the thread 2 instead of thread 1. The uneven feature of the user behaviors is exampled in the bottom block, which demonstrates the importance of the time interval information..</font></p>
+                            <p><font size=3>Figure 1: The inconsistent nature is reflected by the comparison between the top and middle blocks, which suggests that different users may have different numbers of preference threads. The evolving character is illustrated in the middle block, where item B6 belongs to the thread 2 instead of thread 1. The uneven feature of the user behaviors is exampled in the bottom block, which demonstrates the importance of the time interval information..</font></p>
                         </div>
 						<div class="content">
                     <div class="text">
@@ -64,7 +65,7 @@
 							<font size=3>
                             <li>We propose to build sequential recommender models via decomposing user independent preferences, where we highlight three practical challenges brought by the inconsistent, evolving and uneven nature of the user behaviors.</li>
 							<li>We design a reinforcement learning model to seamlessly overcome the above challenges in a unified framework, where we adaptively separate the complete user behavior sequence into many independent sub-sequences for better fitting the training data.</li>
-							<li>We conduct extensive experiments based on six real- world datasets to demonstrate the superiority of our model. For benefiting the research community, we have released our project at https://icde-gogo.github.io/submit2022.github.io/</li>
+							<li>We conduct extensive experiments based on six real- world datasets to demonstrate the superiority of our model./</li>
                             
                             </font>
                         </ul></p>
@@ -79,7 +80,6 @@
 
                     <div class="content project_headline">
 					<div class="text">
-                            <p><font size=3>Table 1: Overall comparison between the baselines and our models(the last four lines).</font></p>
                         </div>
                         <div class="img" style="text-align:center">
                             <img class="img_responsive" src="result.png" alt="result" style="margin:auto;max-width:90%">
@@ -96,11 +96,7 @@
 						
 						<div class="content project_headline">
 						<div class="text">
-                            <p><font size=3>Table 2: Structure of the code files [main program].</font></p>
-                        </div>
-						<div class="img" style="text-align:center">
-                            <img class="img_responsive" src="code.png" alt="result" style="margin:auto;max-width:90%">
-                        </div>
+
 					
                         
                         
