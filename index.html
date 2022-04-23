@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" class="gr__shape2prog_csail_mit_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 
               <meta name="viewport" content="width=device-width, initial-scale=1">    <link rel="shortcut icon" href="http://shape2prog.csail.mit.edu/images/favicon.ico">
-        <meta name="description" content="Counterfactual Data-Augmented Sequential Recommendation">
-        <meta name="keywords" content="Counterfactual Data-Augmented, Sequential Recommendation">
+        <meta name="description" content="Sequential Recommendation with User Evolving Preference Decomposition">
+        <meta name="keywords" content="Reinforcement Learning, Sequential Recommendation">
 
         <title>Sequential Recommendation</title>
         <link rel="stylesheet" href="font.css">
@@ -17,7 +17,7 @@
             <div class="container">
 
                 <div class="content project_title">
-                    <h1>Unbiased Sequential Recommendation with Latent Confounders</h1>
+                    <h1>USequential Recommendation with User Evolving Preference Decomposition</h1>
                 </div>
 
                 <div class="content project_headline">
@@ -33,14 +33,7 @@
                 <div class="content">
                     <div class="text">
                         <h1>1. Abstract</h1>
-                        <p><font size=3>Sequential recommendation holds the promise of understanding user preference by capturing successive behavior correlations.
-Existing research essentially focus on designing different models for better fitting the offline datasets.
-However, the observational data may have been contaminated by the exposure or selection biases, which renders the learned sequential models unreliable.
-In order to solve this fundamental problem, in this paper, we propose to reformulate the sequential recommendation task with the potential outcome framework, where we are able to clearly understand the data bias mechanism and correct it by re-weighting the training instances with the inverse propensity score (IPS).
-For more robustness modeling, a clipping strategy is applied to the IPS estimation to reduce the variance of the learning objective. 
-To make our framework more practical, we design a parameterized model to remove the impact of the potential latent confounders.
-At last, we theoretically analysis the unbiasedness of the proposed framework under both vanilla and clipping IPS estimations.
-We conduct extensive experiment based on both synthetic and real-world datasets to demonstrate the effectiveness of our framework.</font></p>
+                        <p><font size=3>Abstract—Modeling user sequential behaviors has recently attracted increasing attention in the recommendation domain. Existing methods mostly assume coherent preference in the same sequence. However, user personalities are volatile and easily changed, and there can be multiple mixed preferences underlying user behaviors. To solve this problem, in this paper, we propose a novel sequential recommender model via decomposing and modeling user independent preferences. To achieve this goal, we highlight three practical challenges considering the inconsistent, evolving and uneven nature of the user behavior, which are seldom noticed by the previous work. For overcoming these challenges in a unified framework, we introduce a reinforcement learning module to simulate the evolution of user preference. More specifically, the action aims to allocate each item into a sub-sequence or create a new one according to how the previous items are decomposed as well as the time interval between successive behaviors. The reward is associated with the final loss of the learning objective, aiming to generate sub-sequences which can better fit the training data. We conduct extensive experiments based on six real-world datasets across different domains. Comparing with the state-of- the-art methods, empirical studies manifest that our model can on average improve the performance by about 9.68%, 12.4%, 8.56% and 7.13% on the metrics of Precision, Recall, NDCG and MRR, respectively. For reproducing our experiments and promoting this research direction, we have released our project at https://icde-gogo.github.io/submit2022.github.io</font></p>
                     </div>
                 </div>
 
@@ -52,12 +45,7 @@ We conduct extensive experiment based on both synthetic and real-world datasets 
                             <img class="img_responsive" src="intro.png" alt="Intro" style="margin:auto;max-width:80%">
                         </div>
                         <div class="text">
-                            <p><font size=3>Figure 1: The observed interaction between the
-user and the item is jointly determined by the exposure
-of the item and the user underlying sequential preference.
-While many items (e.g., B, C) can also reveal user sequential
-preference, they are not recommended, and thus have less
-opportunities to be observed and optimized.</font></p>
+                            <p><font size=3>Figure 1:Examples of user inconsistent, evolving and uneven multi-thread preferences. The inconsistent nature is reflected by the comparison between the top and middle blocks, which suggests that different users may have different numbers of preference threads. The evolving character is illustrated in the middle block, where item B6 belongs to the thread 2 instead of thread 1. The uneven feature of the user behaviors is exampled in the bottom block, which demonstrates the importance of the time interval information..</font></p>
                         </div>
 						<div class="content">
                     <div class="text">
@@ -67,17 +55,17 @@ opportunities to be observed and optimized.</font></p>
                             <img class="img_responsive" src="all.png" alt="Intro" style="margin:auto;max-width:80%">
                         </div>
                         <div class="text">
-                            <p><font size=3>Figure 2:Illustration of Our framework for Unbiased Sequential Recommendation with Latent Confounders  </font></p>
+                            <p><font size=3>Figure 2:Illustration of our model:(a) is a item allocator, which sequentially assigns the items into different sub-sequences. (b) is the sub-sequence modelers, which process the decomposed user behaviors from (a) to generate the final recommendation list.  </font></p>
                         </div>
 
 						<div class="content">
 						<h3>Contributions</h3>
                             <p><ul class="download">
 							<font size=3>
-                            <li> We propose to solve the sequential recommendation task within the potential outcome framework for data bias correction, which, to the best of our knowledge, is the first time in the recommendation domain.</li>
-							<li>To realize the above idea, we design a three-channel GRU model to simultaneously capture the item correlations, model the latent confounders and estimate the IPS. </li>
-							<li>We analyze the unbiasedness of the proposed model from both expectation and variance perspectives, which builds the theoretical foundations of our model. </li>
-                            <li>We conduct extensive experiments based on both synthetic and real-world datasets to evaluate our proposed models.</li>
+                            <li>We propose to build sequential recommender models via decomposing user independent preferences, where we highlight three practical challenges brought by the inconsistent, evolving and uneven nature of the user behaviors.</li>
+							<li>We design a reinforcement learning model to seamlessly overcome the above challenges in a unified framework, where we adaptively separate the complete user behavior sequence into many independent sub-sequences for better fitting the training data.</li>
+							<li>We conduct extensive experiments based on six real- world datasets to demonstrate the superiority of our model. For benefiting the research community, we have released our project at https://icde-gogo.github.io/submit2022.github.io/</li>
+                            
                             </font>
                         </ul></p>
                         </div>
